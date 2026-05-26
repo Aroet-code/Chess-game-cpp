@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Chess.cpp" />
+    <ClCompile Include="ChessNamespace.h" />
     <ClCompile Include="MovementHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
