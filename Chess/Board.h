@@ -1,12 +1,16 @@
 #pragma once
 #include <cstdint>
 #include <iostream>
+#include "ChessNamespace.h"
+
+using namespace chess;
+
 class Board
 {
 private:
 	void initiateDefaultStartPosition() {
 		reset();
-		uint64_t temp = 1;
+		Bitboard temp = 1;
 		white_rooks = white_rooks ^ temp;
 		temp = temp << 1;
 		white_knights = white_knights ^ temp;
@@ -114,7 +118,7 @@ public:
 	}
 
 	void logBoard() {
-		uint64_t temp = 1;
+		Bitboard temp = 1;
 		temp = temp << 63;
 		std::cout << "Logging the board:" << std::endl;
 		for (int i = 0; i < 64; i++) {
@@ -178,19 +182,19 @@ public:
 		std::cout << "Finished logging the board." << std::endl;
 	}
 
-	uint64_t white_pawns = 0;
-	uint64_t white_rooks = 0;
-	uint64_t white_knights = 0;
-	uint64_t white_bishops = 0;
-	uint64_t white_queens = 0;
-	uint64_t white_kings = 0;
+	Bitboard white_pawns = 0;
+	Bitboard white_rooks = 0;
+	Bitboard white_knights = 0;
+	Bitboard white_bishops = 0;
+	Bitboard white_queens = 0;
+	Bitboard white_kings = 0;
 
-	uint64_t black_pawns = 0;
-	uint64_t black_rooks = 0;
-	uint64_t black_knights = 0;
-	uint64_t black_bishops = 0;
-	uint64_t black_queens = 0;
-	uint64_t black_kings = 0;
+	Bitboard black_pawns = 0;
+	Bitboard black_rooks = 0;
+	Bitboard black_knights = 0;
+	Bitboard black_bishops = 0;
+	Bitboard black_queens = 0;
+	Bitboard black_kings = 0;
 
 };
 
